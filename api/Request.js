@@ -79,8 +79,8 @@ class Request {
 
   __sign() {
     let specialHeaderParams = {
-      ...this.header
-        'X-MW-TIMESTAMP': parseInt(new Date().valueOf() / 1000, 10)
+      ...this.header,
+      'X-MW-TIMESTAMP': parseInt(new Date().valueOf() / 1000, 10)
     };
     let privateKey = this.config.secret;
     let method = this.method;
