@@ -50,6 +50,14 @@ class ListSubscribers extends Request {
     return this.send();
   }
 
+  unsubscribe(listUid, subscriberUid) {
+    this.method = Request.Type.PUT;
+    this.url = `/lists/${listUid}/subscribers/${subscriberUid}/unsubscribe`;
+    this.data = [];
+
+    return this.send();
+  }
+
   delete(listUid, subscriberUid) {
     this.method = Request.Type.DELETE;
     this.url = `/lists/${listUid}/subscribers/${subscriberUid}`;
