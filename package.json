@@ -1,6 +1,6 @@
 {
   "name": "node-mailwizz",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "MailWizz implementation",
   "author": "Mikel Calvo <hi@mikelcalvo.me> (www.mikelcalvo.me)",
   "main": "index.js",
