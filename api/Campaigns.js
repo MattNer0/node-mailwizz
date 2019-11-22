@@ -47,6 +47,30 @@ class Campaigns extends Request {
 
         return this.send();
     }
+
+    getCampaign(campaignUid) {
+        this.method = Request.Type.GET;
+        this.url = `${path}/${campaignUid}`;
+        this.data = {};
+
+        return this.send();
+    }
+
+    pauseUnpause(campaignUid) {
+        this.method = Request.Type.PUT;
+        this.url = `${path}/${campaignUid}/pause-unpause`;
+        this.data = {};
+
+        return this.send();
+    }
+
+    markSent(campaignUid) {
+        this.method = Request.Type.PUT;
+        this.url = `${path}/${campaignUid}/mark-sent`;
+        this.data = {};
+
+        return this.send();
+    }
 }
 
 module.exports = Campaigns;

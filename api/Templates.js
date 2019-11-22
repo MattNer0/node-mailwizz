@@ -7,6 +7,22 @@ class Template extends Request {
         super(config);
     }
 
+    create(info) {
+        let postData = {
+            name: info.name, //required
+            content: Buffer.from(info.content).toString('base64'), //required
+            inline_css: info.inlineCss || 'no', //yes or no
+        };
+
+        this.method = Request.Type.POST;
+        this.url = path;
+        this.data = {
+            template: postData
+        };
+
+        return this.send();
+    }
+
     getTemplates(page = 1, limit = 10) {
         this.url = path;
         this.method = Request.Type.GET;
